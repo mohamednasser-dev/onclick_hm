@@ -47,7 +47,7 @@ class BannerController extends Controller
                 "id" => 0,
                 "name_ar" => "الكل",
                 "name_en" => "All",
-                "image" => "1630923495.png",
+                "image" => "all_image.png",
                 "created_at" => "2021-08-22 15:50:38",
                 "updated_at" => "2021-09-06 10:18:15",
             ];
