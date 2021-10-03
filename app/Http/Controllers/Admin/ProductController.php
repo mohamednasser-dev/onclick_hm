@@ -104,7 +104,7 @@ class ProductController extends Controller
             'name'        => 'required|unique:products',
             'category_id' => 'required',
             'brand_id' => 'required',
-            'age_id' => 'required',
+//            'age_id' => 'required',
             'images'      => 'required',
             'gender'      => 'required',
             'total_stock' => 'required|numeric|min:1',
@@ -147,18 +147,18 @@ class ProductController extends Controller
                 'position' => 1,
             ]);
         }
-        if ($request->sub_category_id != null) {
-            array_push($category, [
-                'id'       => $request->sub_category_id,
-                'position' => 2,
-            ]);
-        }
-        if ($request->sub_sub_category_id != null) {
-            array_push($category, [
-                'id'       => $request->sub_sub_category_id,
-                'position' => 3,
-            ]);
-        }
+//        if ($request->sub_category_id != null) {
+//            array_push($category, [
+//                'id'       => $request->sub_category_id,
+//                'position' => 2,
+//            ]);
+//        }
+//        if ($request->sub_sub_category_id != null) {
+//            array_push($category, [
+//                'id'       => $request->sub_sub_category_id,
+//                'position' => 3,
+//            ]);
+//        }
 
         $p->category_ids = json_encode($category);
         $p->description = ($request->description)?$request->description:$request->description;
@@ -236,8 +236,8 @@ class ProductController extends Controller
         $p->discount = $request->discount_type == 'amount' ? $request->discount : $request->discount;
         $p->discount_type = $request->discount_type;
         $p->total_stock = $request->total_stock;
-        $p->price_group = $request->pricegroup;
-        $p->age_id = $request->age_id;
+//        $p->price_group = $request->pricegroup;
+//        $p->age_id = $request->age_id;
         $p->brand_id = $request->brand_id;
         $p->gender = $request->gender;
         $p->attributes = $request->has('attribute_id') ? json_encode($request->attribute_id) : json_encode([]);

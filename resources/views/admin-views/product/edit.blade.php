@@ -84,18 +84,18 @@
                                            placeholder="Ex : 100" required>
                                 </div>
                             </div>
-                            @foreach($prices as $price)
-                                <div class="col-6">
-                                    <div class="form-group">
-                                        <label class="input-label"
-                                               for="exampleFormControlInput1">{{trans('messages.price-groups')}} : {{$price->name}}</label>
-                                        <input type="number" min="1" max="100000" step="0.01" value="{{@$product['price_group'][$price->id]}}" name="pricegroup[{{$price->id}}]"
-                                               class="form-control"
-                                               placeholder="Ex : 100" required>
-                                    </div>
-                                </div>
+{{--                            @foreach($prices as $price)--}}
+{{--                                <div class="col-6">--}}
+{{--                                    <div class="form-group">--}}
+{{--                                        <label class="input-label"--}}
+{{--                                               for="exampleFormControlInput1">{{trans('messages.price-groups')}} : {{$price->name}}</label>--}}
+{{--                                        <input type="number" min="1" max="100000" step="0.01" value="{{@$product['price_group'][$price->id]}}" name="pricegroup[{{$price->id}}]"--}}
+{{--                                               class="form-control"--}}
+{{--                                               placeholder="Ex : 100" required>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
 
-                            @endforeach
+{{--                            @endforeach--}}
                             <div class="col-6">
                                 <div class="form-group">
                                     <label class="input-label"
@@ -160,7 +160,7 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-md-6 col-6">
+                            <div class="col-md-12 col-12">
                                 <div class="form-group">
                                     <label class="input-label"
                                            for="exampleFormControlSelect1">{{trans('messages.category')}}<span
@@ -174,23 +174,23 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-md-6 col-6">
-                                <div class="form-group">
-                                    <label class="input-label"
-                                           for="exampleFormControlSelect1">{{trans('messages.sub_category')}}<span
-                                            class="input-label-secondary"></span></label>
-                                    <select name="sub_category_id" id="sub-categories"
-                                            data-id="{{count($product_category)>=2?$product_category[1]->id:''}}"
-                                            class="form-control js-select2-custom"
-                                            onchange="getRequest('{{url('/')}}/admin/product/get-categories?parent_id='+this.value,'sub-sub-categories')">
+{{--                            <div class="col-md-6 col-6">--}}
+{{--                                <div class="form-group">--}}
+{{--                                    <label class="input-label"--}}
+{{--                                           for="exampleFormControlSelect1">{{trans('messages.sub_category')}}<span--}}
+{{--                                            class="input-label-secondary"></span></label>--}}
+{{--                                    <select name="sub_category_id" id="sub-categories"--}}
+{{--                                            data-id="{{count($product_category)>=2?$product_category[1]->id:''}}"--}}
+{{--                                            class="form-control js-select2-custom"--}}
+{{--                                            onchange="getRequest('{{url('/')}}/admin/product/get-categories?parent_id='+this.value,'sub-sub-categories')">--}}
 
-                                    </select>
-                                </div>
-                            </div>
+{{--                                    </select>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
                         </div>
 
-                        <div class="row"
-                             style="border: 1px solid #80808045; border-radius: 10px;padding-top: 10px;margin: 1px">
+{{--                        <div class="row"--}}
+{{--                             style="border: 1px solid #80808045; border-radius: 10px;padding-top: 10px;margin: 1px">--}}
 {{--                            <div class="col-12">--}}
 {{--                                <div class="form-group">--}}
 {{--                                    <label class="input-label"--}}
@@ -206,17 +206,17 @@
 {{--                                    </select>--}}
 {{--                                </div>--}}
 {{--                            </div>--}}
-                            <div class="col-md-12 mt-2 mb-2">
-                                <div class="customer_choice_options" id="customer_choice_options">
-                                    @include('admin-views.product.partials._choices',['choice_no'=>json_decode($product['attributes']),'choice_options'=>json_decode($product['choice_options'],true)])
-                                </div>
-                            </div>
-                            <div class="col-md-12 mt-2 mb-2">
-                                <div class="variant_combination" id="variant_combination">
-                                    @include('admin-views.product.partials._edit-combinations',['combinations'=>json_decode($product['variations'],true)])
-                                </div>
-                            </div>
-                        </div>
+{{--                            <div class="col-md-12 mt-2 mb-2">--}}
+{{--                                <div class="customer_choice_options" id="customer_choice_options">--}}
+{{--                                    @include('admin-views.product.partials._choices',['choice_no'=>json_decode($product['attributes']),'choice_options'=>json_decode($product['choice_options'],true)])--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            <div class="col-md-12 mt-2 mb-2">--}}
+{{--                                <div class="variant_combination" id="variant_combination">--}}
+{{--                                    @include('admin-views.product.partials._edit-combinations',['combinations'=>json_decode($product['variations'],true)])--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
 
                         <div class="form-group pt-4">
                             <label class="input-label"
